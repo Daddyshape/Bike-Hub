@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Bikes</title>
+<style>
+body {
+   
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+
+    .navbar-logo {
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-logo img {
+    height: 50px;
+    margin-right: 10px;
+    }
+
+    .navbar-logo span {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    }
+
+    .navbar-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+
+    .navbar-menu li {
+    position: relative;
+    margin: 0 15px;
+     }
+
+    .navbar-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s, background 0.3s;
+    }
+
+    .navbar-menu a:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    }
+
+    .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    z-index: 999;
+    padding: 20px 10%;
+    }
+
+    .dropdown.active {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .dropdown a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 1rem;
+    transition: color 0.3s;
+    }
+
+    .dropdown a:hover {
+    color: #ff9800;
+     }
+
+    .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    }
+
+    .navbar-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+        }
+
+    @media screen and (max-width: 768px) {
+    .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    }
+
+    .navbar-menu.active {
+     display: flex;
+    }
+
+    .navbar-menu li {
+    margin: 10px 0;
+    text-align: center;
+    }
+
+    .navbar-toggle {
+    display: flex;
+    }
+    }
+	
+    </style>
+	
+    <nav class="navbar">
+    <div class="navbar-logo">
+    <img src="https://ideogram.ai/assets/progressive-image/balanced/response/bbnoahYGSXO61_mhX5uuGQ" alt="Logo">
+         
+	<p style="back ground:white; color: gray;">
+	<span style="font-family:Bahnschrift SemiBold SemiConden;"> BIKE  HUB </span>
+		
+    </div>
+    <div class="navbar-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+     <ul class="navbar-menu">
+    <li><a href="D:\APPLICATION\BIKE HUB.html">Home</a></li>
+    <li onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+    <a href="">Budget</a>
+    <div class="dropdown" id="gamesDropdown">
+        <a href="#Bike 1"><a href="D:\APPLICATION\book now.html">0 to 1,00,000/- </a>
+        <a href="D:\APPLICATION\book now.html">1,00,000/- to 3,00,000/-</a>
+        <a href="#Bike 3">3,00,000/- to 5,00,000/-</a>
+		<a href="#Bike 3">Above 5,00,000/-</a>
+    </div>
+    </li> 
+	
+    <li><a href="D:\APPLICATION\Trending bike.html" class="block py-2 px-4 hover:bg-gray-600">Trending Bikes</a></li>
+    <li><a href="D:\APPLICATION\terms.html">About Us</a></li>
+    <li><a href="https://www.instagram.com/traffic_signal._/">Contact</a></li>
+    </ul>
+    </nav>
+	     
+<script>
+    function toggleDropdown(show) {
+    const dropdown = document.getElementById('gamesDropdown');
+    if (show) {
+    dropdown.classList.add('active');
+    } else {
+    dropdown.classList.remove('active');
+    }
+    }
+	function toggleMenu() {
+    const menu = document.querySelector('.navbar-menu');
+    menu.classList.toggle('active');
+    }
+</script>
+			
+    <style>
+	body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
+	}
+
+	.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	}
+
+	.card {
+	display: flex;
+	flex: 1 1 calc(48% - 16px);
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin: 8px 0;
+	padding: 16px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	gap: 16px;
+	}
+
+	.card img {
+	width: 200px;
+	height: auto;
+	border-radius: 4px;
+	}
+
+	.card-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	}
+
+	.card-header {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 8px;
+	}
+
+	.card-specs {
+	font-size: 1rem;
+	color: #666;
+	margin-bottom: 8px;
+	}
+
+	.card-price {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20px;
+	}
+
+	.card-location {
+	font-size: 0.9rem;
+	color: #666;
+	margin-bottom: 16px;
+	}
+
+	.btn {
+	display: inline-block;
+	padding: 10px 10px;
+	background-color: #008C72;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 20px;
+	font-size: 1.0rem;
+	max-width: 150px;
+	font-weight: bold;
+	border: 1px solid #008C72;
+	transition: all 0.3s ease;
+	text-align: center;
+	}
+
+	.btn:hover {
+	background-color: #fff;
+	color: #008C72;
+	cursor: pointer;
+	}
+
+	.rating {
+	font-size: 0.9rem;
+	color: #666;
+	text-align: right;
+	}
+
+	.rating i {
+	color: #00b050;
+	}
+
+	@media screen and (max-width: 768px) {
+	.card {
+	flex: 1 1 100%; 
+	}
+	}
+
+	@media screen and (max-width: 480px) {
+	.card img {
+	width: 120px;
+	}
+
+	.card-header {
+	font-size: 1rem;
+	}
+
+	.card-price {
+	font-size: 1.1rem;
+	}
+
+	.btn {
+	padding: 8px 16px;
+	}
+	}
+    </style>
+</head>
+<body>
+
+	<tr>
+	
+<td>
+		<h1>
+			<p style="back ground:white; color: black;">
+			<span style="font-family:Engravers MT; margin-left: 160px;">BMW</span>
+		</h1>
+</td>
+	</tr>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/bmw-select-model-light-white-uni-racing-blue-metallic-and-racing-r-1677057972659.jpg?q=80" alt="BMW G310 RR">
+	<div class="card-content">
+	<div class="card-header">BMW G310 RR<span>→</span></div>
+	<div class="card-specs">312.12 cc|30 kmpl|33.5 bhp|174 kg</div>
+	<div class="card-price">₹ 3,57,345</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 311 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fbike-images%2Fcolors%2Fbmw%2Fs-1000-rr%2Fbmw-s-1000-rr-light-white-m-motorsport.png%3Fv%3D1670661359&w=750&q=75" alt="BMW S1000RR ">
+	<div class="card-content">
+	<div class="card-header">BMW S1000RR <span>→</span></div>
+	<div class="card-specs">999 cc|17.5 kmpl|206.51 bhp|197 kg</div>
+	<div class="card-price">₹ 24,35,511</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 3 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/bmw-select-model-polar-white-with-racing-blue-1690881193499.png?q=80" alt="BMW G 310 R">
+	<div class="card-content">
+	<div class="card-header">BMW G 310 R<span>→</span></div>
+	<div class="card-specs">313 cc|30 kmpl|33.52 bhp|164 kg</div>
+	<div class="card-price">₹ 3,40,244</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.7/5 | 99 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/126519/g-310-gs-right-front-three-quarter.png?isig=0" alt="BMW G 310 GS">
+	<div class="card-content">
+	<div class="card-header">BMW G 310 GS <span>→</span></div>
+	<div class="card-specs">313 cc|29 kmpl|33.52 bhp|175 kg</div>
+	<div class="card-price">₹ 3,85,848</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 115 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/151729/m-1000-rr-right-side-view.png?isig=0" alt="BMW M 1000 RR">
+	<div class="card-content">
+	<div class="card-header">BMW M 1000 RR<span>→</span></div>
+	<div class="card-specs">999 cc|140 kmpl|209.19 bhp|192 kg</div>
+	<div class="card-price">₹ 56,81,079</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 33 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/158203/r1300gs-left-side-view.png?isig=0" alt="BMW R 1300 GS Adventure">
+	<div class="card-content">
+	<div class="card-header">BMW R 1300 GS Adventure <span>→</span></div>
+	<div class="card-specs">1300 cc|143.4 bhp|269 kg</div>
+	<div class="card-price">₹ 26,46,608</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>0/5 | 0 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/bmw-select-model-style-triple-black-1676369955357.png?q=80" alt="BMW R 1250 GS">
+	<div class="card-content">
+	<div class="card-header">BMW R 1250 GS<span>→</span></div>
+	<div class="card-specs">1254 cc|134.1 bhp|249 kg</div>
+	<div class="card-price">₹ 23,93,303</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 12 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/163587/s-1000-r-right-side-view.png?isig=0" alt="BMW S 1000 R">
+	<div class="card-content">
+	<div class="card-header">BMW S 1000 R<span>→</span></div>
+	<div class="card-specs">999 cc|162.26 bhp|199 kg</div>
+	<div class="card-price">₹ 22,14,888</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.5/5 | 12 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/bmw-select-model-style-rallye-1676371795941.png?q=80" alt="BMW R 1250 GS Adventure">
+	<div class="card-content">
+	<div class="card-header">BMW R 1250 GS Adventure<span>→</span></div>
+	<div class="card-specs">1254 cc|134.1 bhp|268 kg</div>
+	<div class="card-price">₹ 26,17,760</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.9/5 | 23 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/185413/bmw-f900-gs-left-side-view0.png?isig=0" alt="BMW F 900 GS">
+	<div class="card-content">
+	<div class="card-header">BMW F 900 GS<span>→</span></div>
+	<div class="card-specs">895 cc|103.25 bhp|219 kg</div>
+	<div class="card-price">₹ 16,06,579</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 4 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/bmw-select-model-style-rallye-1674654014269.png?q=80" alt="BMW F850 GS">
+	<div class="card-content">
+	<div class="card-header">BMW F850 GS<span>→</span></div>
+	<div class="card-specs">853 cc|93.87 bhp|233 kg</div>
+	<div class="card-price">₹ 15,14,494</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.9/5 | 12 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/642x361/n/cw/ec/181721/bmw-r-1300-gs-adventure-right-side-view3.jpeg?isig=0&q=75" alt="BMW R 1300 GS">
+	<div class="card-content">
+	<div class="card-header">BMW R 1300 GS<span>→</span></div>
+	<div class="card-specs">1300 cc|145 bhp|237 kg</div>
+	<div class="card-price">₹ 24,68,122</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 4 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/159333/m-1000-r-right-side-view.png?isig=0&q=80" alt="BMW M 1000 R">
+	<div class="card-content">
+	<div class="card-header">BMW M 1000 R<span>→</span></div>
+	<div class="card-specs">999 cc|206.5 bhp|199 kg</div>
+	<div class="card-price">₹ 38,39,377</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 3 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/181561/r-12-nine-t-left-side-view-2.png?isig=0" alt="BMW R 12 nine T">
+	<div class="card-content">
+	<div class="card-header">BMW R 12 nine T<span>→</span></div>
+	<div class="card-specs">1170 cc|107.5 bhp|220 kg</div>
+	<div class="card-price">₹ 24,56,611</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 4 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/bmw-select-model-style-exclusive-1677042448468.png?q=80" alt="BMW K 1600">
+	<div class="card-content">
+	<div class="card-header">BMW K 1600<span>→</span></div>
+	<div class="card-specs">1649 cc|158 bhp|344 kg</div>
+	<div class="card-price">₹ 38,77,362</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 5 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/bw/models/colors/bmw-select-model-mineral-white-metallic-1676977282740.png" alt="BMW R 1250 RT">
+	<div class="card-content">
+	<div class="card-header">BMW R 1250 RT<span>→</span></div>
+	<div class="card-specs">1254 cc|134.1 bhp|279 kg</div>
+	<div class="card-price">₹ 28,99,771</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 4 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/bmw-select-model-gravity-blue-metallic-1716284309859.png?q=80" alt="BMW m 1000 XR">
+	<div class="card-content">
+	<div class="card-header">BMW m 1000 XR<span>→</span></div>
+	<div class="card-specs">999 cc|201 bhp|223 kg</div>
+	<div class="card-price">₹ 52,78,206</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.5/5 | 5 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/176893/m-1000-xr-left-side-view.png?isig=0" alt="BMW S 1000 XR">
+	<div class="card-content">
+	<div class="card-header">BMW S 1000 XR<span>→</span></div>
+	<div class="card-specs">999 cc|167.62 bhp|227 kg</div>
+	<div class="card-price">₹ 26,46,537</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.5/5 | 2 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/116109/f900xr-left-side-view-2.png?isig=0&q=80" alt="BMW F900XR">
+	<div class="card-content">
+	<div class="card-header">BMW F900XR<span>→</span></div>
+	<div class="card-specs">895 cc|103.25 bhp|219 kg</div>
+	<div class="card-price">₹ 14,68,452</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 4 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/181559/r-12-left-side-view.png?isig=0" alt="BMW R 12">
+	<div class="card-content">
+	<div class="card-header">BMW R 12<span>→</span></div>
+	<div class="card-specs">1170 cc|93.7 bhp|227 kg</div>
+	<div class="card-price">₹ 23,41,505</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.5/5 | 3 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/epkg6eb_1772353.jpg" alt="BMW F 900 GS Adventure">
+	<div class="card-content">
+	<div class="card-header">BMW F 900 GS Adventure<span>→</span></div>
+	<div class="card-specs">895 cc|103.25 bhp|209 kg</div>
+	<div class="card-price">₹ 17,21,686</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 4 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/bmw-select-model-manhattan-metallic-matt-1679567480713.png?q=80" alt="BMW R 18">
+	<div class="card-content">
+	<div class="card-header">BMW R18<span>→</span></div>
+	<div class="card-specs">1802 cc|89.84 bhp|427 kg</div>
+	<div class="card-price">₹ 37,81,824</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="bmw booking.html" class="btn">Book Your BMW</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.6/5 | 3 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+	 <style>
+
+    footer {
+	 width: 100%;
+      height: 60%;
+      display: block;
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: black;
+    }
+	
+	footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    color: #e0e0e0;
+    margin-top: 20px;
+    }
+
+    footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    }
+
+    footer a:hover {
+    text-decoration: underline;
+    }
+	
+    </style>
+
+	
+	  <footer>
+        <p>Design by Kshitij Borkar</p>
+        <a href="https://instagram.com/traffic_signal._">Join Our Instagram (traffic_signal._)</a>
+		<p>
+		<a href="https://www.instagram.com/noughty_shizuka_00/">Join Our Instagram (noughty_shizuka_00)</a></p>
+    </footer>  
+	</body>
+	</html>

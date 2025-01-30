@@ -1,0 +1,711 @@
+<!doctype html>
+<title> BIKE HUB </title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body style=background-color:white;">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh; 
+  background-image: url('https://m.media-amazon.com/images/I/61fGUAaDAXL.jpg'); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  font-family: Arial, sans-serif; 
+  color: white; 
+}
+
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #000;
+    color: #fff;
+	}
+	
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+
+    .navbar-logo {
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-logo img {
+    height: 50px;
+    margin-right: 10px;
+    }
+
+    .navbar-logo span {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    }
+
+    .navbar-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+
+    .navbar-menu li {
+    position: relative;
+    margin: 0 15px;
+     }
+
+    .navbar-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s, background 0.3s;
+    }
+
+    .navbar-menu a:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    }
+
+    .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    z-index: 999;
+    padding: 20px 10%;
+    }
+
+    .dropdown.active {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .dropdown a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 1rem;
+    transition: color 0.3s;
+    }
+
+    .dropdown a:hover {
+    color: #ff9800;
+    }
+
+    .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    }
+
+    .navbar-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+    .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    }
+
+    .navbar-menu.active {
+     display: flex;
+    }
+
+    .navbar-menu li {
+    margin: 10px 0;
+    text-align: center;
+    }
+
+    .navbar-toggle {
+    display: flex;
+    }
+    }
+	
+    </style>
+	
+    <nav class="navbar">
+    <div class="navbar-logo">
+    <img src="https://ideogram.ai/assets/progressive-image/balanced/response/bbnoahYGSXO61_mhX5uuGQ" alt="Logo">
+         
+	<p style="back ground:white; color: gray;">
+	<span style="font-family:Bahnschrift SemiBold SemiConden;"> BIKE  HUB </span>
+		
+    </div>
+    <div class="navbar-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+     <ul class="navbar-menu">
+    <li><a src="BIKE HUB.html">Home</a></li>
+    <li onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+    <a href="">Budget</a>
+    <div class="dropdown" id="gamesDropdown">
+	<a href="#Bike 1"><a href="D:\APPLICATION\book now.html">0 to 1,00,000/- </a>
+	<a href="D:\APPLICATION\book now.html">1,00,000/- to 3,00,000/-</a>
+	<a href="#Bike 3">3,00,000/- to 5,00,000/-</a>
+	<a href="#Bike 3">Above 5,00,000/-</a>
+    </div>
+    </li> 
+	
+    <li><a href="D:\APPLICATION\Trending bike.html" class="block py-2 px-4 hover:bg-gray-600">Trending Bikes</a></li>
+    <li><a href="terms.html">About Us</a></li>
+    <li><a href="https://www.instagram.com/traffic_signal._/">Contact</a></li>
+    </ul>
+    </nav>
+	     
+<script>
+    function toggleDropdown(show) {
+    const dropdown = document.getElementById('gamesDropdown');
+    if (show) {
+    dropdown.classList.add('active');
+    } else {
+    dropdown.classList.remove('active');
+    }
+    }
+	function toggleMenu() {
+    const menu = document.querySelector('.navbar-menu');
+    menu.classList.toggle('active');
+    }
+</script>
+	
+<center>
+  <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    }
+    .video-background {
+    position: relative;
+    height: 70vh;
+	overflow: hidden;
+    }
+
+    .video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    }
+
+    .vignette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    }
+
+    .overlay-content {
+    position: relative;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    }
+
+    .overlay-content h1 {
+    font-size: 3rem;
+    margin: 0;
+    }
+ 
+    .overlay-content p {
+    font-size: 1.5rem;
+    }
+	
+    .search-bar {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      display: flex;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .search-bar input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 20px 0 0 20px;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 5px 5px;
+      font-size: 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+    }
+    .search-bar button:hover {
+      background-color: #0056b3;
+    }
+	</style>
+	
+<div class="video-background">
+    <video autoplay="" loop="" muted="" playsinline="">
+    <source src="v.mp4" type="video/mp4">
+    </video>
+    <div class="vignette"></div>
+    <div class="overlay-content">
+    <h1>Welcome To Bike Hub</h1>
+    <p>Experience Your Ride Like Never Before</p>
+    </div>
+    </div>
+    <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search Your favorite Bike">
+    <button onclick="navigate()">Search</button>
+    </div>
+    </div>
+
+  <script>
+function navigate() {
+const query = document.getElementById("searchInput").value.toLowerCase();
+const navigationMap = {
+	yamaha: "file:///D:/Yamaha/Yamaha.html",
+	royalenfield: "file:///D:/APPLICATION/Royal%20Enfield.html",
+	aprilia:"file:///D:/APPLICATION/aprilia.html",
+	suzuki:"file:///D:/APPLICATION/suzuki.html",
+	benelli: "file:///D:/APPLICATION/benelli.html",
+	tvs: "file:///D:/APPLICATION/tvs.html",
+	triumph: "file:///D:/APPLICATION/Triumph.html",
+	jawa: "file:///D:/APPLICATION/jawa.html",
+	harleydavidson: "file:///D:/APPLICATION/harley%20davidson.html",
+	aboutus: "file:///D:/APPLICATION/terms.html",
+	
+	};
+		if (navigationMap[query]) {
+		window.location.href = navigationMap[query];
+	} else {
+		alert("page not found!!!!");
+	}
+	}
+	</script>
+ 
+    </div>
+  </div>
+</center>
+
+</head>
+
+<hr width="100%" size="2" noshade>
+
+<body>
+
+	<tr>
+	
+<td>
+		<h1>
+			<p style="back ground:white; color: black;">
+			<span style="font-family:Agency FB; margin-left: 180px;"> Trending Bikes </span>
+		</h1>
+</td>
+	</tr>
+
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .table-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .table-item {
+      flex: 1 1 calc(25% - 40px); /* 4 */
+      max-width: calc(25% - 40px);
+      box-sizing: border-box;
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .table-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .table-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .table-item h3 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+      font-family: 'Arial', sans-serif;
+      color: #000;
+    }
+
+    .table-item a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      .table-item {
+        flex: 1 1 calc(33.33% - 40px); /* 3 */
+        max-width: calc(33.33% - 40px);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+	.table-item {
+	flex: 1 1 calc(50% - 40px); /* 2 */
+	max-width: calc(50% - 40px);
+	}
+    }
+
+    @media screen and (max-width: 480px) {
+	.table-item {
+	flex: 1 1 calc(50% - 40px); /* 1 */
+	max-width: calc(50% - 40px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <center>
+    <div class="table-container">
+	<div class="table-item">
+	<a href="D:\Yamaha\Yamaha.html">
+	<img src="https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/interceptor/new/colours/studio-shots/barcelona-blue/barcelona_blue_000.png" alt="Interceptor">
+	<h3>Interceptor</h3>
+	</a>
+	</div>
+	  
+	<div class="table-item">
+	<a href="D:\Yamaha\Yamaha.html">
+	<img src="https://www.royalenfield.com/content/dam/royal-enfield/india/motorcycles/continental-gt/new/colours/studio-shots/mr-clean/new/mr_clean_0000.png" alt="Continental GT650">
+	<h3>Continental GT650</h3>
+	</a>
+	</div>
+	  
+	<div class="table-item">
+	<a href="D:\Yamaha\Yamaha.html">
+	<img src="https://www.royalenfield.com/content/dam/royal-enfield/super-meteor-650/motorcycles/colors/studio-shots/interstellar-green/new/interstellar_green_000.webp" alt="Super Meteor 650">
+	<h3>Super Meteor 650</h3>
+	</a>
+	</div>
+	  
+	<div class="table-item">
+	<a href="D:\Yamaha\Yamaha.html">
+	<img src="https://royalenfieldmotorcycles.co.nz/wp-content/uploads/sites/2/2024/04/SG650-Blue-Side-1440x880.png" alt="Shotgun 650">
+	<h3>Shotgun 650</h3>
+	</a>
+	</div>
+    </div>
+  </center>
+
+<table>
+		<tr>
+<td>
+		<h1>
+			<p style="back ground: black; color: black;">
+			<span style="font-family:Agency FB; margin-left: 180px;"> BRANDS </span>
+		</h1>
+</td>
+		</tr>
+</table>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .brands-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .brand-card {
+      flex: 1 1 calc(25% - 20px); /* 4 */
+      max-width: calc(25% - 20px);
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.1s ease;
+    }
+
+    .brand-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .brand-card img {
+      width: 100%;
+      height: 60%;
+      display: block;
+    }
+
+    .brand-card h1 {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    .brand-card p {
+      font-size: 1rem;
+      color: gray;
+    }
+
+    .brand-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media (max-width: 1024px) {
+      .brand-card {
+        flex: 1 1 calc(33.33% - 20px); /* 3 */
+        max-width: calc(33.33% - 20px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .brand-card {
+        flex: 1 1 calc(50% - 20px); /* 2 */
+        max-width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-card {
+        flex: 1 1 calc(50% - 20px); /* 1 */
+        max-width: calc(50% - 20px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="brands-container">
+    <div class="brand-card">
+      <a href="D:\APPLICATION\aprilia.html">
+        <img src="https://motorcycle-logos.com/wp-content/uploads/2016/10/Aprilia-Motorcycle-logo.png" alt="Aprilia">
+        <h1>Aprilia</h1>
+        <p>High-performance Italian motorcycles</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="D:\APPLICATION\Bajaj.html">
+        <img src="https://static.vecteezy.com/system/resources/previews/019/766/200/non_2x/bajaj-logo-bajaj-icon-transparent-free-png.png" alt="Bajaj">
+        <h1>Bajaj</h1>
+        <p>Affordable and reliable bikes</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="benelli.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Benelli_2016_logo.png/1200px-Benelli_2016_logo.png" alt="Benelli">
+        <h1>Benelli</h1>
+        <p>Italian style and engineering</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="bmw.html">
+        <img src="https://www.carlogos.org/logo/BMW-logo.png" alt="BMW">
+        <h1>BMW</h1>
+        <p>Luxury bikes with precision</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="D:\Yamaha\Yamaha.html">
+        <img src="https://logos-world.net/wp-content/uploads/2021/03/Ducati-Logo.png" alt="Ducati">
+        <h1>Ducati</h1>
+        <p>Excellence in speed and design</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="harley davidson.html">
+        <img src="https://pngimg.com/uploads/harley_davidson/small/harley_davidson_PNG63.png" alt="Harley Davidson">
+        <h1>Harley Davidson</h1>
+        <p>Iconic cruisers and roadsters</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="D:\Yamaha\Yamaha.html">
+        <img src="https://seeklogo.com/images/H/hero-moto-corp-logo-1E20F7943A-seeklogo.com.png" alt="Hero">
+        <h1>Hero</h1>
+        <p>Reliable bikes for everyone</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="D:\Yamaha\Yamaha.html">
+        <img src="https://freepngimg.com/download/honda/30656-3-honda-logo-red.png" alt="Honda">
+        <h1>Honda</h1>
+        <p>Power and performance</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="jawa.html">
+        <img src="https://logos-world.net/wp-content/uploads/2022/12/Jawa-Moto-Logo.png" alt="Jawa">
+        <h1>Jawa</h1>
+        <p>Classic retro bikes</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="D:\Yamaha\Yamaha.html">
+        <img src="https://www.logo.wine/a/logo/India_Kawasaki_Motors/India_Kawasaki_Motors-Logo.wine.svg" alt="Kawasaki">
+        <h1>Kawasaki</h1>
+        <p>Leading-edge sports bikes</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="D:\Yamaha\Yamaha.html">
+        <img src="https://www.pngkey.com/png/full/306-3068282_ktm-sportmotorcycles-picsart-png-ktm-logo.png" alt="KTM">
+        <h1>KTM</h1>
+        <p>Extreme adventures</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="D:\Yamaha\Yamaha.html">
+        <img src="https://purepng.com/public/uploads/large/yamaha-logo-yny.png" alt="Yamaha">
+        <h1>Yamaha</h1>
+        <p>Innovation and excitement</p>
+      </a>
+  </div>
+  
+    <div class="brand-card">
+      <a href="tvs.html">
+        <img src="https://download.logo.wine/logo/TVS_Motor_Company/TVS_Motor_Company-Logo.wine.png" alt="TVS">
+        <h1>TVS</h1>
+        <p>Innovation and excitement</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="suzuki.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Suzuki_logo_2.svg/2560px-Suzuki_logo_2.svg.png" alt="Suzuki">
+        <h1>Suzuki</h1>
+        <p>Innovation and excitement</p>
+      </a>
+  </div>
+
+    <div class="brand-card">
+      <a href="Triumph.html">
+        <img src="https://i.pinimg.com/originals/ae/17/a3/ae17a3427dfb6065f403054dc8dd7069.png" alt="Triumph">
+        <h1>Triumph</h1>
+        <p>Innovation and excitement</p>
+      </a>
+    </div>
+
+    <div class="brand-card">
+      <a href="Royal Enfield.html">
+        <img src="https://static.vecteezy.com/system/resources/previews/019/956/204/non_2x/royal-enfield-transparent-royal-enfield-free-free-png.png" alt="Royal Enfield ">
+        <h1>Royal Enfield </h1>
+        <p>Innovation and excitement</p>
+      </a>
+    </div>
+	
+    <style>
+
+    footer {
+	 width: 100%;
+      height: 60%;
+      display: block;
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: black;
+    }
+	
+	footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    color: #e0e0e0;
+    margin-top: 20px;
+    }
+
+    footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    }
+
+    footer a:hover {
+    text-decoration: underline;
+    }
+	
+    </style>
+
+    <footer>
+        <p>Design by Kshitij Borkar</p>
+        <a href="https://instagram.com/traffic_signal._">Join Our Instagram (traffic_signal._)</a>
+		 <p>Project manager Prajakta Dede</p>
+		<p>
+		<a href="https://www.instagram.com/noughty_shizuka_00/">Join Our Instagram (noughty_shizuka_00)</a></p>
+    </footer>  
+
+</body>
+</html>  

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triumph Bikes</title>
+<style>
+body {
+   
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+
+    .navbar-logo {
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-logo img {
+    height: 50px;
+    margin-right: 10px;
+    }
+
+    .navbar-logo span {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    }
+
+    .navbar-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+
+    .navbar-menu li {
+    position: relative;
+    margin: 0 15px;
+     }
+
+    .navbar-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s, background 0.3s;
+    }
+
+    .navbar-menu a:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    }
+
+    .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    z-index: 999;
+    padding: 20px 10%;
+    }
+
+    .dropdown.active {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .dropdown a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 1rem;
+    transition: color 0.3s;
+    }
+
+    .dropdown a:hover {
+    color: #ff9800;
+     }
+
+    .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    }
+
+    .navbar-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+        }
+
+    @media screen and (max-width: 768px) {
+    .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    }
+
+    .navbar-menu.active {
+     display: flex;
+    }
+
+    .navbar-menu li {
+    margin: 10px 0;
+    text-align: center;
+    }
+
+    .navbar-toggle {
+    display: flex;
+    }
+    }
+	
+    </style>
+	
+    <nav class="navbar">
+    <div class="navbar-logo">
+    <img src="https://ideogram.ai/assets/progressive-image/balanced/response/bbnoahYGSXO61_mhX5uuGQ" alt="Logo">
+         
+	<p style="back ground:white; color: gray;">
+	<span style="font-family:Bahnschrift SemiBold SemiConden;"> BIKE  HUB </span>
+		
+    </div>
+    <div class="navbar-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+     <ul class="navbar-menu">
+    <li><a href="D:\APPLICATION\BIKE HUB.html"> Home </a> </li>
+    <li onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+    <a href="">Budget</a>
+    <div class="dropdown" id="gamesDropdown">
+        <a href="#Bike 1"><a href="D:\APPLICATION\book now.html">0 to 1,00,000/- </a>
+        <a href="D:\APPLICATION\book now.html">1,00,000/- to 3,00,000/-</a>
+        <a href="#Bike 3">3,00,000/- to 5,00,000/-</a>
+		<a href="#Bike 3">Above 5,00,000/-</a>
+    </div>
+    </li> 
+	
+    <li><a href="D:\APPLICATION\Trending bike.html" class="block py-2 px-4 hover:bg-gray-600">Trending Bikes</a></li>
+    <li><a href="D:\APPLICATION\terms.html">About Us</a></li>
+    <li><a href="https://www.instagram.com/traffic_signal._/">Contact</a></li>
+    </ul>
+    </nav>
+	     
+<script>
+    function toggleDropdown(show) {
+    const dropdown = document.getElementById('gamesDropdown');
+    if (show) {
+    dropdown.classList.add('active');
+    } else {
+    dropdown.classList.remove('active');
+    }
+    }
+	function toggleMenu() {
+    const menu = document.querySelector('.navbar-menu');
+    menu.classList.toggle('active');
+    }
+</script>
+			
+    <style>
+	body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
+	}
+
+	.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	}
+
+	.card {
+	display: flex;
+	flex: 1 1 calc(48% - 16px);
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin: 8px 0;
+	padding: 16px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	gap: 16px;
+	}
+
+	.card img {
+	width: 200px;
+	height: auto;
+	border-radius: 4px;
+	}
+
+	.card-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	}
+
+	.card-header {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 8px;
+	}
+
+	.card-specs {
+	font-size: 1rem;
+	color: #666;
+	margin-bottom: 8px;
+	}
+
+	.card-price {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20px;
+	}
+
+	.card-location {
+	font-size: 0.9rem;
+	color: #666;
+	margin-bottom: 16px;
+	}
+
+	.btn {
+	display: inline-block;
+	padding: 10px 10px;
+	background-color: #008C72;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 20px;
+	font-size: 1.0rem;
+	max-width: 150px;
+	font-weight: bold;
+	border: 1px solid #008C72;
+	transition: all 0.3s ease;
+	text-align: center;
+	}
+
+	.btn:hover {
+	background-color: #fff;
+	color: #008C72;
+	cursor: pointer;
+	}
+
+	.rating {
+	font-size: 0.9rem;
+	color: #666;
+	text-align: right;
+	}
+
+	.rating i {
+	color: #00b050;
+	}
+
+	@media screen and (max-width: 768px) {
+	.card {
+	flex: 1 1 100%; 
+	}
+	}
+
+	@media screen and (max-width: 480px) {
+	.card img {
+	width: 120px;
+	}
+
+	.card-header {
+	font-size: 1rem;
+	}
+
+	.card-price {
+	font-size: 1.1rem;
+	}
+
+	.btn {
+	padding: 8px 16px;
+	}
+	}
+    </style>
+</head>
+<body>
+
+	<tr>
+	
+<td>
+		<h1>
+			<p style="back ground:white; color: black;">
+			<span style="font-family:Engravers MT; margin-left: 160px;"> Triumph </span>
+		</h1>
+</td>
+	</tr>
+
+<div class="container">
+	<div class="card">
+	<img src="https://media.triumphmotorcycles.co.uk/image/upload/f_auto/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/modern-classics/my25/bajaj%20-%20india/speed%20400%20my25/triumph_my25_792x446_red02.png" alt="Triumph Speed 400">
+	<div class="card-content">
+	<div class="card-header">Triumph Speed 400 <span>→</span></div>
+	<div class="card-specs">398.15 cc|30 kmpl|39.5 bhp|176 kg</div>
+	<div class="card-price">₹ 2,96,180</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.7/5 | 71 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://media.triumphmotorcycles.co.uk/image/upload/f_auto/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/modern-classics/my25/bajaj%20-%20india/2025%20bajaj%20bikes%20cgi/speed%20t4%202025%20bajaj/speed-400-t4-sc10-1410x793.jpg" alt="Triumph Speed T4">
+	<div class="card-content">
+	<div class="card-header">Triumph Speed T4 <span>→</span></div>
+	<div class="card-specs">398.15 cc|29 kmpl|30.6 bhp|180 kg</div>
+	<div class="card-price">₹ 2,49,775</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.7/5 | 391 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://media.triumphmotorcycles.co.uk/image/upload/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/in-scrambler%20400%20my24%20colour%20update/scrambler-400-x_my24_rhs_white_825.png" alt="Triumph Scrambler 400 X">
+	<div class="card-content">
+	<div class="card-header">Triumph Scrambler 400 X <span>→</span></div>
+	<div class="card-specs">398.15 cc|27 kmpl|39.5 bhp|185 kg</div>
+	<div class="card-price">₹ 3,24,132</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 112 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://media.triumphmotorcycles.co.uk/image/upload/f_auto/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/roadsters-supersports/my24/lk2_lj2_daytona_660/daytona_660_fixed/web/629/daytona%20660_my24_carnival%20red_rhs_629px.png" alt="Triumph Daytona 660">
+	<div class="card-content">
+	<div class="card-header">Triumph Daytona 660<span>→</span></div>
+	<div class="card-specs">660 cc|93.87 bhp|201 kg</div>
+	<div class="card-price">₹ 11,33,494</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.1/5 | 7 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/49666/triumph-rocket-3-right-side10.jpeg?q=100" alt="Triumph Rocket 3">
+	<div class="card-content">
+	<div class="card-header">Triumph Rocket 3 <span>→</span></div>
+	<div class="card-specs">2458 cc|165 bhp|304 kg</div>
+	<div class="card-price">₹ 25,59,056</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph </a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.7/5 | 41 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://media.triumphmotorcycles.co.uk/image/upload/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/roadsters-supersports/my23/street%20triple/765%20rs%20variant/colours/carnival%20red/my23-street-triple-rs-carnival-red-rhs-1160x629.png" alt="Triumph Street Triple RS">
+	<div class="card-content">
+	<div class="card-header">Triumph Street Triple RS<span>→</span></div>
+	<div class="card-specs">765 cc|128.2 bhp|166 kg</div>
+	<div class="card-price">₹ 13,83,273</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.7/5 | 15 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/128448/bonneville-bobber-right-side-view-2.png?isig=0&q=100" alt="Triumph Bonneville Bobber">
+	<div class="card-content">
+	<div class="card-header">Triumph Bonneville Bobber<span>→</span></div>
+	<div class="card-specs">1200 cc|76.9 bhp|251 kg</div>
+	<div class="card-price">₹ 14,10,899</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.2/5 | 5 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/125111/trident-660-right-side-view-2.png?isig=0&q=80" alt="Triumph Trident 660">
+	<div class="card-content">
+	<div class="card-header">Triumph Trident 660<span>→</span></div>
+	<div class="card-specs">660 cc|80 bhp|189 kg</div>
+	<div class="card-price">₹ 9,65,244</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.9/5 | 8 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/bw/models/colors/triumph-select-model-carnival-red--sapphire-black-gt-1698837817855.png?q=100" alt="Triumph Tiger 900">
+	<div class="card-content">
+	<div class="card-header">Triumph Tiger 900<span>→</span></div>
+	<div class="card-specs">888 cc|106.5 bhp|219 kg</div>
+	<div class="card-price">₹ 16,52,622</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 4 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://media.triumphmotorcycles.co.uk/image/upload/f_auto/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/speed%20twin%20900%202025/speed%20twin%20900%20my25/speed-twin-900-my25-aluminium-silver-rhs-629.png" alt="Triumph Speed Twin 900">
+	<div class="card-content">
+	<div class="card-header">Triumph Speed Twin 900<span>→</span></div>
+	<div class="card-specs">900 cc|64 bhp|216 kg</div>
+	<div class="card-price">₹ 10,38,273</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4/5 | 1 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/137427/street-triple-r-right-side-view-4.png?isig=0&q=80" alt="Triumph Street Triple R">
+	<div class="card-content">
+	<div class="card-header">Triumph Street Triple R<span>→</span></div>
+	<div class="card-specs">765 cc|118.4 bhp|168 kg</div>
+	<div class="card-price">₹ 11,94,499</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.9/5 | 7 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://www.triumphmotorcycles.in/media-library/images/motorcycles/adventure-touring/my24/tiger%201200%20update/tiger_1200%20_my24_web/1080/tiger%201200%20rally%20explorer_my24_matt%20sandstorm_rhs.png?bc=transparent&mw=243" alt="Triumph Tiger 1200">
+	<div class="card-content">
+	<div class="card-header">Triumph Tiger 1200<span>→</span></div>
+	<div class="card-specs">1160 cc|148 bhp|245 kg</div>
+	<div class="card-price">₹ 22,59,767</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 6 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/127269/scrambler-900-right-side-view-2.png?isig=0&q=80" alt="Triumph Scrambler 900">
+	<div class="card-content">
+	<div class="card-header">Triumph Scrambler 900<span>→</span></div>
+	<div class="card-specs">900 cc|64.1 bhp|223 kg</div>
+	<div class="card-price">₹ 11,52,379</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.9/5 | 8 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://media.triumphmotorcycles.co.uk/image/upload/f_auto/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/roadsters-supersports/my24/pb1_speed_triple_rs/speed_triple_my24_carnival_red_rhs_629px.png" alt="Triumph Speed Triple 1200 RS">
+	<div class="card-content">
+	<div class="card-header">Triumph Speed Triple 1200 RS<span>→</span></div>
+	<div class="card-specs">1160 cc|177.5 bhp|198 kg</div>
+	<div class="card-price">₹ 20,94,026</div>
+	<div class="card-location">On-Road Price</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 4 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://media.triumphmotorcycles.co.uk/image/upload/f_auto/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/modern-classics/my25/my25%20colours/db4%20bonneville%20t100/web/629/bonneville%20t100_my25_baja%20orange_rhs_629px.png" alt="Triumph Bonneville T100">
+	<div class="card-content">
+	<div class="card-header">Triumph Bonneville T100<span>→</span></div>
+	<div class="card-specs">900 cc|64.1 bhp|228 kg</div>
+	<div class="card-price">₹ 11,63,790</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 1 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="data:image/jpeg;base64,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" alt="Triumph Tiger Sport 660">
+	<div class="card-content">
+	<div class="card-header">Triumph Tiger Sport 660<span>→</span></div>
+	<div class="card-specs">660 cc|80 bhp|206 kg</div>
+	<div class="card-price">₹ 11,17,006</div>
+	<div class="card-location">On-Road Price</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.5/5 | 6 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/triumph-bonneville-speedmaster-black-1519717946717.png?20190103151915&q=80" alt="Triumph Bonneville Speedmaster">
+	<div class="card-content">
+	<div class="card-header">Triumph Bonneville Speedmaster<span>→</span></div>
+	<div class="card-specs">1200 cc|76.9 bhp|263 kg</div>
+	<div class="card-price">₹ 14,10,899</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 1 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://media.triumphmotorcycles.co.uk/image/upload/f_auto/q_auto:eco/sitecoremedialibrary/media-library/images/motorcycles/modern-classics/my24%20colours/du4_dt4_t120_range/dt4/bonneville-t120-black_my24_graphite_rhs_1080px.png" alt="Triumph Bonneville T120">
+	<div class="card-content">
+	<div class="card-header">Triumph Bonneville T120<span>→</span></div>
+	<div class="card-specs">1200 cc|78.9 bhp|236 kg</div>
+	<div class="card-price">₹ 13,34,928</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 1 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV0jk2nYN0TWZjeir156vSEcIbGAaCp8qH9w&s" alt="Triumph Scrambler 1200">
+	<div class="card-content">
+	<div class="card-header">Triumph Scrambler 1200<span>→</span></div>
+	<div class="card-specs">1200 cc|89 bhp|228 kg</div>
+	<div class="card-price">₹ 13,85,575</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 1 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://www.triumphmotorcycles.fi/media-library/images/motorcycles/tiger%20sport%20800%20-%202025/tiger%20sport%20800%20my25/tiger-sport-800-my25-cosmic-yellow-rhs-1080.png?bc=transparent&mw=243" alt="Triumph Tiger Sport 800">
+	<div class="card-content">
+	<div class="card-header">Triumph Tiger Sport 800<span>→</span></div>
+	<div class="card-specs">Upcomming Bike</div>
+	<div class="card-price">₹ 11,00,000 - ₹ 12,00,000</div>
+	<div class="card-location">Launch confidence: Low</div>
+	<a href="D:\APPLICATION\Triumph booking.html" class="btn">Book Your Triumph</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 1 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+    <style>
+    footer {
+	 width: 100%;
+      height: 20%;
+      display: block;
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: black;
+    }
+	
+	footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    color: #e0e0e0;
+    margin-top: 20px;
+    }
+
+    footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    }
+
+    footer a:hover {
+    text-decoration: underline;
+    }
+	
+    </style>
+
+    <footer>
+        <p>Design by Kshitij Borkar</p>
+        <a href="https://instagram.com/traffic_signal._">Join Our Instagram (traffic_signal._)</a>
+		<p>
+		<a href="https://www.instagram.com/noughty_shizuka_00/">Join Our Instagram (noughty_shizuka_00)</a></p>
+    </footer>  
+	
+	
+</body>
+</html>

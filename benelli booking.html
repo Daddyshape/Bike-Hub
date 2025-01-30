@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Benelli</title>
+    <style>
+	body {
+	margin: 0;
+	padding: 0;
+	font-family: "Arial", sans-serif;
+	background: url('https://tse2.mm.bing.net/th?id=OIP.SdNmLHfLih8YXPJDsvof9QHaEK&pid=Api&P=0&h=180') no-repeat center center fixed;
+	background-size: cover;
+	color: white;
+	}
+	h1 {
+	text-align: center;
+	background-color: orange;
+	color: white;
+	padding: 20px;
+	font-family: "Agency FB", sans-serif;
+	}
+	 form {
+	margin: auto;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.7);
+	width: 60%;
+	border-radius: 15px;
+	}
+	input, select {
+	width: calc(100% - 20px);
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	}
+	input[type="radio"] {
+	width: auto;
+	margin-right: 10px;
+	}
+	label {
+	font-weight: bold;
+	display: block;
+	margin: 10px 0 5px;
+	}
+	button {
+	background-color: orange;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	}
+	button:hover {
+	background-color: darkorange;
+	}
+	a {
+	text-decoration: none;
+	color: white;
+	}
+    </style>
+</head>
+<body>
+    <h1>Book Your Own Benelli </h1>
+    <form action="nextpage.html" method="post">
+	<label for="name">Enter Your Name:</label>
+	<input type="text" id="name" name="name" required>
+
+	<label for="email">Enter Your Mail Address:</label>
+	<input type="email" id="email" name="email" required>
+
+	<label for="mobile">Enter Your Mobile Number:</label>
+	<input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+
+	<label>Your Gender:</label>
+	<input type="radio" name="gender" value="Male" checked> Male
+	<input type="radio" name="gender" value="Female"> Female
+	<input type="radio" name="gender" value="Other"> Other
+
+	<label for="address">Enter Your Address:</label>
+	<input type="text" id="address" name="address" required>
+
+	<label for="city">Enter Your City:</label>
+	<select id="city" name="city">
+	<option value="pune">Pune</option>
+	<option value="hinjawadi">Hinjawadi</option>
+	<option value="wakad">Wakad</option>
+	<option value="katraj">Katraj</option>
+	<option value="baner">Baner</option>
+	<option value="pimpri">Pimpri</option>
+	<option value="chinchwad">Chinchwad</option>
+	<option value="bhosari">Bhosari</option>
+	<option value="moshi">Moshi</option>
+	<option value="alandi">Alandi</option>
+	<option value="talegaon">Talegaon</option>
+	<option value="aundh">Aundh</option>
+	<option value="sanghvi">Sanghvi</option>
+	<option value="marunji">Marunji</option>
+	</select>
+	
+	<label for="address">choose your bike:</label>
+	<input type="text" id="address" name="address" required>
+
+	<label for="city">mention your Bike:</label>
+	<select id="bike" name="bike">
+	<option value="pune"></option>
+	<option value="hinjawadi">Hinjawadi</option>
+	<option value="wakad">Wakad</option>
+	<option value="katraj">Katraj</option>
+	<option value="baner">Baner</option>
+	<option value="pimpri">Pimpri</option>
+	<option value="chinchwad">Chinchwad</option>
+	<option value="bhosari">Bhosari</option>
+	<option value="moshi">Moshi</option>
+	<option value="alandi">Alandi</option>
+	<option value="talegaon">Talegaon</option>
+	<option value="aundh">Aundh</option>
+	<option value="sanghvi">Sanghvi</option>
+	<option value="marunji">Marunji</option>
+	</select>
+
+	<br><br>
+	<button type="submit">Submit Data</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVS Bikes</title>
+<style>
+body {
+   
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+
+    .navbar-logo {
+    display: flex;
+    align-items: center;
+    }
+
+    .navbar-logo img {
+    height: 50px;
+    margin-right: 10px;
+    }
+
+    .navbar-logo span {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    }
+
+    .navbar-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+
+    .navbar-menu li {
+    position: relative;
+    margin: 0 15px;
+     }
+
+    .navbar-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s, background 0.3s;
+    }
+
+    .navbar-menu a:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    }
+
+    .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    z-index: 999;
+    padding: 20px 10%;
+    }
+
+    .dropdown.active {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .dropdown a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 1rem;
+    transition: color 0.3s;
+    }
+
+    .dropdown a:hover {
+    color: #ff9800;
+     }
+
+    .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    }
+
+    .navbar-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+        }
+
+    @media screen and (max-width: 768px) {
+    .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    }
+
+    .navbar-menu.active {
+     display: flex;
+    }
+
+    .navbar-menu li {
+    margin: 10px 0;
+    text-align: center;
+    }
+
+    .navbar-toggle {
+    display: flex;
+    }
+    }
+	
+    </style>
+	
+    <nav class="navbar">
+    <div class="navbar-logo">
+    <img src="https://ideogram.ai/assets/progressive-image/balanced/response/bbnoahYGSXO61_mhX5uuGQ" alt="Logo">
+         
+	<p style="back ground:white; color: gray;">
+	<span style="font-family:Bahnschrift SemiBold SemiConden;"> BIKE  HUB </span>
+		
+    </div>
+    <div class="navbar-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+     <ul class="navbar-menu">
+    <li><a href="D:\APPLICATION\BIKE HUB.html">Home</a></li>
+    <li onmouseover="toggleDropdown(true)" onmouseout="toggleDropdown(false)">
+    <a href="">Budget</a>
+    <div class="dropdown" id="gamesDropdown">
+        <a href="#Bike 1"><a href="D:\APPLICATION\book now.html">0 to 1,00,000/- </a>
+        <a href="D:\APPLICATION\book now.html">1,00,000/- to 3,00,000/-</a>
+        <a href="#Bike 3">3,00,000/- to 5,00,000/-</a>
+		<a href="#Bike 3">Above 5,00,000/-</a>
+    </div>
+    </li> 
+	
+    <li><a href="D:\APPLICATION\Trending bike.html" class="block py-2 px-4 hover:bg-gray-600">Trending Bikes</a></li>
+    <li><a href="D:\APPLICATION\terms.html">About Us</a></li>
+    <li><a href="https://www.instagram.com/traffic_signal._/">Contact</a></li>
+    </ul>
+    </nav>
+	     
+<script>
+    function toggleDropdown(show) {
+    const dropdown = document.getElementById('gamesDropdown');
+    if (show) {
+    dropdown.classList.add('active');
+    } else {
+    dropdown.classList.remove('active');
+    }
+    }
+	function toggleMenu() {
+    const menu = document.querySelector('.navbar-menu');
+    menu.classList.toggle('active');
+    }
+</script>
+			
+    <style>
+	body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
+	}
+
+	.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	}
+
+	.card {
+	display: flex;
+	flex: 1 1 calc(48% - 16px);
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin: 8px 0;
+	padding: 16px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	gap: 16px;
+	}
+
+	.card img {
+	width: 200px;
+	height: auto;
+	border-radius: 4px;
+	}
+
+	.card-content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	}
+
+	.card-header {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 8px;
+	}
+
+	.card-specs {
+	font-size: 1rem;
+	color: #666;
+	margin-bottom: 8px;
+	}
+
+	.card-price {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20px;
+	}
+
+	.card-location {
+	font-size: 0.9rem;
+	color: #666;
+	margin-bottom: 16px;
+	}
+
+	.btn {
+	display: inline-block;
+	padding: 10px 10px;
+	background-color: #008C72;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 20px;
+	font-size: 1.0rem;
+	max-width: 150px;
+	font-weight: bold;
+	border: 1px solid #008C72;
+	transition: all 0.3s ease;
+	text-align: center;
+	}
+
+	.btn:hover {
+	background-color: #fff;
+	color: #008C72;
+	cursor: pointer;
+	}
+
+	.rating {
+	font-size: 0.9rem;
+	color: #666;
+	text-align: right;
+	}
+
+	.rating i {
+	color: #00b050;
+	}
+
+	@media screen and (max-width: 768px) {
+	.card {
+	flex: 1 1 100%; 
+	}
+	}
+
+	@media screen and (max-width: 480px) {
+	.card img {
+	width: 120px;
+	}
+
+	.card-header {
+	font-size: 1rem;
+	}
+
+	.card-price {
+	font-size: 1.1rem;
+	}
+
+	.btn {
+	padding: 8px 16px;
+	}
+	}
+    </style>
+</head>
+<body>
+
+	<tr>
+	
+<td>
+		<h1>
+			<p style="back ground:white; color: black;">
+			<span style="font-family:Engravers MT; margin-left: 160px;">TVS</span>
+		</h1>
+</td>
+	</tr>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/103183/raider-125-right-side-view-20.png?isig=0&q=80" alt="TVS Raider 125">
+	<div class="card-content">
+	<div class="card-header">TVS Raider 125 <span>→</span></div>
+	<div class="card-specs">124.8 cc|56 kmpl|11.2 bhp|123 kg</div>
+	<div class="card-price">₹ 1,05,300</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.4/5 | 22158 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/130211/apache-160-right-side-view-2.jpeg?isig=0&q=80" alt="TVS Apache RTR 160 ">
+	<div class="card-content">
+	<div class="card-header">TVS Apache RTR 160 <span>→</span></div>
+	<div class="card-specs">159.7 cc|45 kmpl|15.82 bhp|137 kg</div>
+	<div class="card-price">₹ 1,38,337</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 3036 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/97549/apache-rtr-160-4v-right-side-view-8.png?isig=0&q=80" alt="TVS Apache RTR 160 4V">
+	<div class="card-content">
+	<div class="card-header">TVS Apache RTR 160 4V<span>→</span></div>
+	<div class="card-specs">159.7 cc|45 kmpl|17.31 bhp|144 kg</div>
+	<div class="card-price">₹ 1,49,673</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="harley davidson booking.html" class="btn">Book Your Harley-Davidson</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.5/5 | 2107 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/124775/ronin-right-side-view-7.png?isig=0" alt="TVS Ronin">
+	<div class="card-content">
+	<div class="card-header">TVS Ronin<span>→</span></div>
+	<div class="card-specs">225.9 cc|41 kmpl|20.1 bhp|159 kg</div>
+	<div class="card-price">₹ 1,67,472</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.6/5 | 574 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/102869/apache-rr-310-right-side-view-2.png?isig=0&q=80" alt="TVS Apache RR 310">
+	<div class="card-content">
+	<div class="card-header">TVS Apache RR 310<span>→</span></div>
+	<div class="card-specs">312.2 cc|33 kmpl|37.48 bhp|174 kg</div>
+	<div class="card-price">₹ 3,23,142</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.7/5 | 82 Ratings</span>
+	</div>
+	</div>
+	</div>
+
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/kl5879b_1795853.jpg?q=80" alt="Harley-Davidson Road Glide">
+	<div class="card-content">
+	<div class="card-header">Harley-Davidson Road Glide<span>→</span></div>
+	<div class="card-specs">1923 cc|107.2 bhp|380 kg</div>
+	<div class="card-price">₹ 48,51,162</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="harley davidson booking.html" class="btn">Book Your Harley-Davidson</a>
+	<div class="rating">
+	<i>★</i>
+	<span>5/5 | 5 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/138919/apache-rtr-310-right-side-view-2.png?isig=0&q=80" alt="TVS Apache RTR 310">
+	<div class="card-content">
+	<div class="card-header">TVS Apache RTR 310<span>→</span></div>
+	<div class="card-specs">312.12 cc|32.5 kmpl|35.08 bhp|169 kg</div>
+	<div class="card-price">₹ 2,96,285</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 198 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/49725/apache-200-right-side-view-2.png?isig=0&q=80" alt="TVS Apache RTR 200 4V">
+	<div class="card-content">
+	<div class="card-header">TVS Apache RTR 200 4V<span>→</span></div>
+	<div class="card-specs">197.75 cc|40 kmpl|20.54 bhp|152 kg</div>
+	<div class="card-price">₹ 1,77,657</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.8/5 | 1646 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/tvs-select-model-all-black-1707468374470.png?q=80" alt="TVS Sport">
+	<div class="card-content">
+	<div class="card-header">TVS Sport<span>→</span></div>
+	<div class="card-specs">109.7 cc|70 kmpl|8.18 bhp|112 kg</div>
+	<div class="card-price">₹ 83,567</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.3/5 | 1377 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/cw/ec/130217/apache-180-right-side-view-2.png?isig=0&q=80" alt="TVS Apache RTR 180">
+	<div class="card-content">
+	<div class="card-header">TVS Apache RTR 180<span>→</span></div>
+	<div class="card-specs">177.4 cc|42 kmpl|16.78 bhp|140 kg</div>
+	<div class="card-price">₹ 1,64,589</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.6/5 | 656 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/tvs-xl-100-comfort-grey-1493715744175.jpg?20190103151915&q=80" alt="TVS XL 100 Heavy Duty">
+	<div class="card-content">
+	<div class="card-header">TVS XL 100 Heavy Duty<span>→</span></div>
+	<div class="card-specs">99.7 cc|57.5 kmpl|4.3 bhp|88 kg</div>
+	<div class="card-price">₹ 62,233</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.4/5 | 314 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/tvs-select-model-starlight-blue-1669375472184.png?q=80" alt="TVS Radeon">
+	<div class="card-content">
+	<div class="card-header">TVS Radeon<span>→</span></div>
+	<div class="card-specs">109.7 cc|64.5 kmpl|8.08 bhp|113 kg</div>
+	<div class="card-price">₹ 96,517</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.4/5 | 525 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+<div class="container">
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/tvs-select-model-black-red-1693570677323.png?q=80" alt="TVS Star City Plus">
+	<div class="card-content">
+	<div class="card-header">TVS Star City Plus<span>→</span></div>
+	<div class="card-specs">109.7 cc|66.5 kmpl|8.08 bhp|115 kg</div>
+	<div class="card-price">₹ 92,729</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>3.3/5 | 21 Ratings</span>
+	</div>
+	</div>
+	</div>
+	
+	<div class="card">
+	<img src="https://imgd.aeplcdn.com/1280x720/n/cw/ec/51490/xl-100-comfort-right-side-view.png?isig=0" alt="TVS XL 100 Comfort">
+	<div class="card-content">
+	<div class="card-header">TVS XL 100 Comfort<span>→</span></div>
+	<div class="card-specs">99.7 cc|55 kmpl|4.3 bhp|86 kg</div>
+	<div class="card-price">₹ 78,855</div>
+	<div class="card-location">On-Road Price.</div>
+	<a href="tvs booking.html" class="btn">Book Your TVS</a>
+	<div class="rating">
+	<i>★</i>
+	<span>4.2/5 | 281 Ratings</span>
+	</div>
+	</div>
+	</div>
+    </div>
+	
+    <style>
+
+    footer {
+	 width: 100%;
+      height: 60%;
+      display: block;
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: black;
+    }
+	
+	footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    color: #e0e0e0;
+    margin-top: 20px;
+    }
+
+    footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    }
+
+    footer a:hover {
+    text-decoration: underline;
+    }
+	
+    </style>
+
+    <footer>
+        <p>Design by Kshitij Borkar</p>
+        <a href="https://instagram.com/traffic_signal._">Join Our Instagram (traffic_signal._)</a>
+		<p>
+		<a href="https://www.instagram.com/noughty_shizuka_00/">Join Our Instagram (noughty_shizuka_00)</a></p>
+    </footer>  
+	
+	
+</body>
+</html>
